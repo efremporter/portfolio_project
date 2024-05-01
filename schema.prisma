@@ -10,20 +10,12 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model Photo {
+model Post {
   id              String     @default(cuid()) @id
   title           String
+  type            String
   takenOn         String
   filePath        String    
   createdAt       DateTime  @default(now()) @map(name: "created_at")
   updatedAt       DateTime  @updatedAt @map(name: "updated_at")
 }
-
-// model Video {
-//   id              String     @default(cuid()) @id
-//   title           String
-//   takenOn         String
-//   filePath        String
-//   createdAt       DateTime  @default(now()) @map(name: "created_at")
-//   updatedAt       DateTime  @updatedAt @map(name: "updated_at")
-// }
