@@ -8,7 +8,8 @@ export async function POST(request) {
     data: {
       title,
       type,
-      takenOn,filePath
+      takenOn,
+      filePath
     }
   })
   return NextResponse.json({data: req})
