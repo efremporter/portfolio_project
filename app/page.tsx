@@ -15,7 +15,7 @@ export default async function Home() {
       <div>
         HERE IS MY APP
       </div>
-      <Image alt={'img'} src={src} width={200} height={200} />
+      <Image priority={true} alt={'img'} src={src} width={200} height={200} />
     </main>
   );
 }
