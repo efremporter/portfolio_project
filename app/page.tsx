@@ -9,7 +9,6 @@ async function getPosts() {
 
 export default async function Home() {
   const post = await getPosts()
-  console.log('POSTS', {post})
   const src = post?.filePath ?? ''
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
