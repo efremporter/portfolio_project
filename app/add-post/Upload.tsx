@@ -5,31 +5,16 @@ export default function S3UploadForm() {
 
   const [file, setFile] = useState<File | null>(null)
   const [title, setTitle] = useState('Title')
-  const [takenOn, setTakenOn] = useState('')
+  const [takenOn, setTakenOn] = useState('testDate')
   const [uploading, setUploading] = useState(false)
 
   const handleFileChange = (e: BaseSyntheticEvent) => {
     setFile(e.target.files[0])
   }
-  
-  const handleClick = async () => {
-    if (!file) return
-    const formData = new FormData();
-    formData.append('file', file)
-    formData.append('title', title)
-    formData.append('taken_on', 'testDate')
-    const response = await fetch('/api/s3-upload', {
-      method: 'POST',
-      body: formData
-    })
-    console.log('RESPONSE', response)
-    return response
-  }
 
   const handleSubmit = async (e: BaseSyntheticEvent) => {
     e.preventDefault()
     if (!file) {
-      console.log('FILE IS REQUIRED')
       return
     }
     setUploading(true)
@@ -37,17 +22,15 @@ export default function S3UploadForm() {
     formData.append('file', file)
     formData.append('title', title)
     formData.append('type', "photo")
-    formData.append('taken_on', 'testDate')
+    formData.append('taken_on', takenOn)
     try {
       const response = await fetch('/api/s3-upload', {
         method: 'POST',
         body: formData
       })
       const data = await response.json()
-      console.log('response', data)
       setUploading(false)
     } catch (error) {
-      console.log('ERROR', error)
       setUploading(false)
     }
   }
