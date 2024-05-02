@@ -1,5 +1,6 @@
 'use client'
 import React, { BaseSyntheticEvent } from "react"
+import S3UploadForm from "./Upload"
 
 export default function AddPost() {
 
@@ -29,11 +30,12 @@ export default function AddPost() {
 
   return (
     <div className="pl-20 pt-20">
-      <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center gap-3">
+      {/* <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center gap-3">
         <input placeholder="Title" value="Title" onChange={() => {}} />
         <input placeholder="Type" value="Photo" onChange={() => {}}/>
         <button type='submit'>Submit</button>
-      </form>
+      </form> */}
+      <S3UploadForm />
     </div>
   )
 }
