@@ -1,6 +1,5 @@
 import prisma from "@/lib/prisma";
 import Image from "next/image";
-import Link from "next/link";
 
 
 async function getPosts() {
@@ -16,7 +15,6 @@ export default async function Home() {
       <div>
         HERE IS MY APP
       </div>
-      <Link href="/add-post" >Add a post</Link>
     </main>
   );
 }
