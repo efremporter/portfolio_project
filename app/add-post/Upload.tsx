@@ -1,10 +1,11 @@
 'use client'
 import React, { BaseSyntheticEvent, useState } from "react"
 
-export default function S3UploadForm() {
+export default function Upload() {
 
   const [file, setFile] = useState<File | null>(null)
   const [title, setTitle] = useState('Title')
+  const [type, setType] = useState('video') // clear later
   const [takenOn, setTakenOn] = useState('testDate')
   const [uploading, setUploading] = useState(false)
 
@@ -14,14 +15,16 @@ export default function S3UploadForm() {
 
   const handleSubmit = async (e: BaseSyntheticEvent) => {
     e.preventDefault()
-    if (!file) {
+    if (!file || (type !== 'photo' && type !== 'video')) {
+      console.log('File required. Type must be photo or video')
       return
     }
     setUploading(true)
     const formData = new FormData();
     formData.append('file', file)
+    formData.append('type', type)
     formData.append('title', title)
-    formData.append('type', "photo")
+    formData.append('type', type)
     formData.append('taken_on', takenOn)
     try {
       const response = await fetch('/api/s3-upload', {
@@ -38,16 +41,16 @@ export default function S3UploadForm() {
   return (
     <div className="flex flex-col justify-center items-center bg-slate-300 h-60 text-black">
       <form className="flex flex-col gap-1.5" onSubmit={handleSubmit}>
-        <h1 className="text-xl pl-2 border-0 border-b-2 border-black">Post an image</h1>
-        <input type='file' accept="image/*" className="bg-white p-2" 
-          onChange={handleFileChange}
-        />
-        <input type="text" placeholder="Title" className="pl-2 py-2"/>
+        <h1 className="text-xl pl-2 border-0 border-b-2 border-black">Create a post</h1>
+        <input type='file' className="bg-white p-2" onChange={handleFileChange} />
+        <input type="text" placeholder="Title" className="pl-2 py-2"
+          value={title} onChange={e => setTitle(e.target.value)} />
+        <input type="text" placeholder="Type" className="pl-2 py-2"
+          value={type} onChange={e => setType(e.target.value)} />
         <button type="submit" className="bg-black text-white p-2">
           {uploading ? 'Uploading...' : 'Upload'}
         </button>
       </form>
     </div>
   )
-
 }
