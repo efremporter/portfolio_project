@@ -1,6 +1,6 @@
 
 import prisma from "@/lib/prisma";
-import React, { useState } from "react";
+import React from "react";
 
 async function getVideos() {
   const videos = await prisma.post.findFirst({
@@ -17,11 +17,9 @@ export default async function Videos() {
     try {
       if (video) {
         console.log('VIDEOS ARE: ', video)
-        // setVideos((videos))
       }
     } catch {
       console.log('ERROR')
-    // }
   }
 
   if (!video) return
