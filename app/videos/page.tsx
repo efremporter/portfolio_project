@@ -24,8 +24,8 @@ export default async function Videos() {
 
   if (!video) return
   return (
-    <div className="w-40 h-40 bg-gray-500">
-      <video className="w-80 h-80" controls>
+    <div className="bg-gray-500">
+      <video className="w-[900px] h-[600px]" controls>
         <source src={video.filePath} />
       </video>
     </div>

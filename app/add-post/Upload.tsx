@@ -5,7 +5,7 @@ export default function Upload() {
 
   const [file, setFile] = useState<File | null>(null)
   const [title, setTitle] = useState('Title')
-  const [type, setType] = useState('video') // clear later
+  const [type, setType] = useState('')
   const [takenOn, setTakenOn] = useState('testDate')
   const [uploading, setUploading] = useState(false)
 
