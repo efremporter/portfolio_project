@@ -10,16 +10,17 @@ const s3Client = new S3Client({
   }
 })
 
-async function uploadImageToS3Bucket(file, fileName) {
+async function uploadImageToS3Bucket(file, fileName, fileType) {
   const fileBuffer = file
   const filePathPrefix = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/'
   const s3FileName = `${fileName}-${Date.now()}`
   const filePathName = `${filePathPrefix}${s3FileName}`
+  const contentType = fileType === 'photo' ? 'image/jpg' : 'video/mp4'
   const params = {
     Bucket: process.env.AWS_S3_BUCKET_NAME,
     Key: s3FileName,
     Body: fileBuffer,
-    ContentType: "image/jpg"
+    ContentType: contentType
   }
 
   const command = new PutObjectCommand(params)
@@ -40,7 +41,7 @@ export async function POST(request) {
       return NextResponse.json({ error: 'All fields required.' }, { status: 400 })
     }
     const buffer = Buffer.from(await file.arrayBuffer())
-    const filePath = await uploadImageToS3Bucket(buffer, file.name)
+    const filePath = await uploadImageToS3Bucket(buffer, file.name, type)
     try {
       const data = {
         title,
