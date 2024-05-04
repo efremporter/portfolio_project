@@ -15,6 +15,23 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }: any) {
+      const newUtillities = {
+        ".custom-scrollbar::-webkit-scrollbar": {
+          // Adjust scrollbar width
+           height: '0.75rem',
+        },
+        ".custom-scrollbar::-webkit-scrollbar-thumb": {
+           backgroundColor: '#6B6B6B',
+        },
+        ".custom-scrollbar::-webkit-scrollbar-track": {
+          backgroundColor: '#2D2D2D',
+          height: '100px'
+        },
+      }
+      addUtilities(newUtillities)
+    },
+  ],
 };
 export default config;
