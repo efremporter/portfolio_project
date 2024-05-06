@@ -10,7 +10,8 @@ async function getVideos() {
       },
       orderBy: {
         createdAt: 'desc'
-      }
+      },
+      take: 10
     })
     return videos
 }
@@ -27,7 +28,7 @@ export default async function VideoCarousel(props: {
   let videoClassName = ''
   if (props.location === 'homePage') {
     ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
-    videoClassName = "min-w-[20rem] h-auto"
+    videoClassName = "min-w-[20rem] h-auto min-h-[14rem]"
   } else {
     ulClassName = "gap-4 flex-wrap justify-evenly"
     videoClassName = "w-[30rem] h-auto"
@@ -39,11 +40,11 @@ export default async function VideoCarousel(props: {
         {videos.map((video, i) => {
           return (
             <li key={i}>
-              {placeholder}
-              {/* <Post
+              {/* {placeholder} */}
+              <Post
                 post={video}
                 className={`${videoClassName}`}
-              /> */}
+              />
             </li>
           )
         })}
