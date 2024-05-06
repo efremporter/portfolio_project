@@ -20,27 +20,26 @@ export default async function VideoCarousel(props: {
   const placeholder = (
     <div className="w-[23rem] h-[13rem] bg-zinc-300"></div>
   )
-
   let ulClassName = ''
   let videoClassName = ''
   if (props.location === 'homePage') {
     ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
-    videoClassName = "min-w-[23rem] "
+    videoClassName = "min-w-[23rem] h-auto"
   } else {
-    ulClassName = "gap-4 flex-wrap justify-center"
-    videoClassName = "min-w-[23rem] h-[13rem]"
+    ulClassName = "gap-4 flex-wrap justify-evenly"
+    videoClassName = "w-[30rem] h-auto"
   }
 
   return (
     <div>
-      <ul className='flex gap-5 overflow-x-auto custom-scrollbar'>
+      <ul className={`flex ${ulClassName}`}>
         {videos.map((video, i) => {
           return (
             <li key={i}>
               {/* {placeholder} */}
               <Post
                 post={video}
-                className="min-w-[23rem]"
+                className={`${videoClassName}`}
               />
             </li>
           )

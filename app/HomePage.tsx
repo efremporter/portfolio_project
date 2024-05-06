@@ -9,9 +9,12 @@ export default function HomePage() {
   return (
     <div className='flex flex-col h-full gap-16'>
       <div className='flex flex-col gap-3  '>
-        <Link href="/videos" className='text-2xl pl-3 hover:underline'>
-            Videos
-        </Link>
+        <div className="flex justify-between items-center">
+          <div className='text-2xl pl-3'>
+              Videos
+          </div>
+          <Link href='/videos' className='hover:underline'>View all</Link>
+        </div>
         <VideoCarousel location={'homePage'} />
       </div>
       <div className='flex flex-col gap-3'>

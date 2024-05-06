@@ -25,11 +25,11 @@ const photos = await getPhotos()
         {photos.map((photo, i) => {
           return (
             <li key={i}>
-              {placeholder}
-              {/* <Post
+              {/* {placeholder} */}
+              <Post
                 post={photo}
                 className="w-[15rem] h-[14rem]"
-              /> */}
+              />
             </li>
           )
         })}
