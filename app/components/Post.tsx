@@ -20,7 +20,7 @@ export default function Post(props: {
     correctElement = (
       <div className={`rounded-xl ${props.className}`}>
         <Image priority={true} alt={'img'} src={src}
-          width={100} height={100} className={`rounded-lg ${props.className}`}
+          width={100} height={100} className={`rounded-lg select-none ${props.className}`}
         />
       </div>
     )
@@ -34,7 +34,7 @@ export default function Post(props: {
   }
 
   return (
-    <div className='select-none flex flex-col gap-2 pb-2 cursor-pointer'>
+    <div className='flex flex-col gap-2 pb-2 '>
       {correctElement}  
       <div className='font-sans text-lg pl-3'>
         {post.title}

@@ -2,16 +2,16 @@
 import prisma from "@/lib/prisma";
 import React from "react";
 import Post from '../components/Post'
-import VideoCarousel from "../components/VideoCarousel";
+import PhotoCarousel from "../components/PhotoCarousel";
 
 export default async function Videos() {
 
   return (
     <div className="flex flex-col gap-4">
       <label className='text-2xl pl-3' >
-        Videos
+        Photos
       </label>
-       <VideoCarousel location={'videosPage'} />
+       <PhotoCarousel location={'photosPage'} />
     </div>
   )
 }

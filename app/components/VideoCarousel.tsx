@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Post from '../posts/Post'
+import Post from './Post'
 import prisma from '@/lib/prisma'
 
 async function getVideos() {
@@ -7,6 +7,9 @@ async function getVideos() {
     const videos = await prisma.post.findMany({
       where: {
         type: 'video'
+      },
+      orderBy: {
+        createdAt: 'desc'
       }
     })
     return videos
@@ -18,13 +21,13 @@ export default async function VideoCarousel(props: {
   
   const videos = await getVideos()
   const placeholder = (
-    <div className="w-[23rem] h-[13rem] bg-zinc-300"></div>
+    <div className="w-[20rem] h-[13rem] bg-zinc-300"></div>
   )
   let ulClassName = ''
   let videoClassName = ''
   if (props.location === 'homePage') {
     ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
-    videoClassName = "min-w-[23rem] h-auto"
+    videoClassName = "min-w-[20rem] h-auto"
   } else {
     ulClassName = "gap-4 flex-wrap justify-evenly"
     videoClassName = "w-[30rem] h-auto"
