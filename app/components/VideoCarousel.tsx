@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
-import Post from '../posts/Post'
+import React from 'react'
+import Post from './Post'
 import prisma from '@/lib/prisma'
 
 async function getVideos() {
-  // Figure out how to load only 10 or so at a time
     const videos = await prisma.post.findMany({
       where: {
         type: 'video'
-      }
+      },
+      orderBy: {
+        createdAt: 'desc'
+      },
+      take: 5
     })
     return videos
 }
@@ -18,15 +21,15 @@ export default async function VideoCarousel(props: {
   
   const videos = await getVideos()
   const placeholder = (
-    <div className="w-[23rem] h-[13rem] bg-zinc-300"></div>
+    <div className="w-[20rem] h-[13rem] bg-zinc-300"></div>
   )
   let ulClassName = ''
   let videoClassName = ''
   if (props.location === 'homePage') {
     ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
-    videoClassName = "min-w-[23rem] h-auto"
+    videoClassName = "min-w-[20rem] h-auto min-h-[14rem]"
   } else {
-    ulClassName = "gap-4 flex-wrap justify-evenly"
+    ulClassName = "gap-4 flex-wrap justify-evenly border-l border-zinc-700"
     videoClassName = "w-[30rem] h-auto"
   }
 

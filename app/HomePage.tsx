@@ -1,27 +1,30 @@
 import React from 'react'
-import VideoCarousel from './components/videos/VideoCarousel'
+import VideoCarousel from './components/VideoCarousel'
 // import SearchBar from './header/SearchBar'
 // import Header from './header/Header'
-import PhotoCarousel from './components/photos/PhotoCarousel'
+import PhotoCarousel from './components/PhotoCarousel'
 import Link from 'next/link'
 
 export default function HomePage() {
   return (
-    <div className='flex flex-col h-full gap-16'>
+    <div className='flex flex-col h-full gap-7'>
+      <div className='flex flex-col gap-3'>
+        <div className="flex justify-between items-center">
+          <div className='text-2xl'>
+              Photos
+          </div>
+          <Link href='/photos' className='hover:underline'>View all</Link>
+        </div>
+        <PhotoCarousel location={'homePage'} />
+      </div>
       <div className='flex flex-col gap-3  '>
         <div className="flex justify-between items-center">
-          <div className='text-2xl pl-3'>
+          <div className='text-2xl'>
               Videos
           </div>
           <Link href='/videos' className='hover:underline'>View all</Link>
         </div>
         <VideoCarousel location={'homePage'} />
-      </div>
-      <div className='flex flex-col gap-3'>
-        <label className='text-2xl pl-3' >
-          Photos
-        </label>
-        <PhotoCarousel />
       </div>
     </div>
   )
