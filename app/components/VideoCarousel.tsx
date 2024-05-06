@@ -10,7 +10,7 @@ async function getVideos() {
       orderBy: {
         createdAt: 'desc'
       },
-      take: 10
+      take: 5
     })
     return videos
 }
@@ -29,7 +29,7 @@ export default async function VideoCarousel(props: {
     ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
     videoClassName = "min-w-[20rem] h-auto min-h-[14rem]"
   } else {
-    ulClassName = "gap-4 flex-wrap justify-evenly"
+    ulClassName = "gap-4 flex-wrap justify-evenly border-x border-1 border-zinc-700"
     videoClassName = "w-[30rem] h-auto"
   }
 

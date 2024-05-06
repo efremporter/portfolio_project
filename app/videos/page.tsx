@@ -5,7 +5,7 @@ export default async function Videos() {
 
   return (
     <div className="flex flex-col gap-4">
-      <label className='text-2xl pl-3' >
+      <label className='text-2xl'>
         Videos
       </label>
        <VideoCarousel location={'videosPage'} />

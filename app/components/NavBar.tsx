@@ -16,39 +16,39 @@ import Link from 'next/link';
 export default function NavBar() {
 
   const pathname = usePathname()
-  const liClassName = 'flex items-center gap-2.5 py-4 pl-4 pr-5 cursor-pointer justify-center hover:bg-zinc-700'
+  const liClassName = 'flex items-center gap-2.5 py-6 cursor-pointer justify-center hover:bg-zinc-700'
   return (
     <ul className='z-10 text-white bg-black flex flex-row justify-evenly text-xl border-0 border-b-2 sticky top-0 border-zinc-700'>
-      <Link href="/">
-        <li className={`${liClassName}`}>
+      <Link className='flex flex-1' href="/">
+        <li className={`${liClassName} flex-1`}>
           {pathname === '/' ? <HomeIcon fontSize='large' /> : <HomeOutlinedIcon fontSize='large' />}
           Home
         </li>
       </Link>
-      {/* <Link href="/projects"> */}
-        <li className={`${liClassName}`}>
+      <Link className='flex flex-1' href="">
+        <li className={`${liClassName} flex-1`}>
           {pathname === '/projects' ? <FolderCopyIcon fontSize='large' /> : <FolderCopyOutlinedIcon fontSize='large' />}
           Projects
         </li>
-      {/* </Link> */}
-      <Link href="/videos">
-        <li className={`${liClassName}`}>
+      </Link>
+      <Link className='flex flex-1' href="/videos">
+        <li className={`${liClassName} flex-1`}>
           {pathname === '/videos' ? <VideoCameraBackIcon fontSize='large' /> : <VideoCameraBackOutlinedIcon fontSize='large' />}
           Videos
         </li>
       </Link>
-      <Link href="/photos">
-        <li className={`${liClassName}`}>
+      <Link className='flex flex-1' href="/photos">
+        <li className={`${liClassName} flex-1`}>
           {pathname === '/photos' ? <ImageIcon fontSize='large' /> : <ImageOutlinedIcon fontSize='large' />}
           Photos
         </li>
       </Link>
-      {/* <Link href="/about"> */}
-        <li className={`${liClassName}`}>
+      <Link className='flex flex-1' href="/about">
+        <li className={`${liClassName} flex-1`}>
           {pathname === '/about' ? <PersonIcon fontSize='large' /> : <PersonOutlinedIcon fontSize='large' />}
           About
         </li>
-      {/* </Link> */}
+      </Link>
     </ul>
   )
 }

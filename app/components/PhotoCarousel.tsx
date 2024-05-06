@@ -31,7 +31,7 @@ const photos = await getPhotos()
     ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
     photoClassName = "w-[14rem] h-[14rem]"
   } else {
-    ulClassName = "gap-4 flex-wrap justify-evenly"
+    ulClassName = "gap-4 flex-wrap justify-evenly border-x border-1 border-zinc-700"
     photoClassName = "w-[20rem] h-[20rem] object-cover"
   }
 
