@@ -16,7 +16,7 @@ import Link from 'next/link';
 export default function NavBar() {
 
   const pathname = usePathname()
-  const liClassName = 'flex items-center gap-2.5 py-4 px-5 cursor-pointer justify-center hover:bg-zinc-700'
+  const liClassName = 'flex items-center gap-2.5 py-4 pl-4 pr-5 cursor-pointer justify-center hover:bg-zinc-700'
   return (
     <ul className='z-10 text-white bg-black flex flex-row justify-evenly text-xl border-0 border-b-2 sticky top-0 border-zinc-700'>
       <Link href="/">
