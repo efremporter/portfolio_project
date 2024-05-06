@@ -1,7 +1,4 @@
-
-import prisma from "@/lib/prisma";
 import React from "react";
-import Post from '../components/Post'
 import VideoCarousel from "../components/VideoCarousel";
 
 export default async function Videos() {

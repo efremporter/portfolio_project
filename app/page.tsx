@@ -3,7 +3,7 @@ import HomePage from "./HomePage";
 
 export default async function Home() {
   return (
-    <main className="bg-black max-w-full mt-4">
+    <main className="bg-black max-w-full">
       <HomePage />
     </main>
   );

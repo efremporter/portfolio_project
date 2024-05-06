@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Post from './Post'
 import prisma from '@/lib/prisma'
 
 async function getVideos() {
-  // Figure out how to load only 10 or so at a time
     const videos = await prisma.post.findMany({
       where: {
         type: 'video'

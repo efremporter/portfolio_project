@@ -18,7 +18,7 @@ export default function NavBar() {
   const pathname = usePathname()
   const liClassName = 'flex items-center gap-2.5 py-4 px-5 cursor-pointer justify-center hover:bg-zinc-700'
   return (
-    <ul className='text-white bg-black flex flex-row justify-evenly text-xl border-0 border-b-2 sticky top-0 border-zinc-700'>
+    <ul className='z-10 text-white bg-black flex flex-row justify-evenly text-xl border-0 border-b-2 sticky top-0 border-zinc-700'>
       <Link href="/">
         <li className={`${liClassName}`}>
           {pathname === '/' ? <HomeIcon fontSize='large' /> : <HomeOutlinedIcon fontSize='large' />}
