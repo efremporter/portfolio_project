@@ -36,11 +36,11 @@ export default async function VideoCarousel(props: {
         {videos.map((video, i) => {
           return (
             <li key={i}>
-              {/* {placeholder} */}
-              <Post
+              {placeholder}
+              {/* <Post
                 post={video}
                 className={`${videoClassName}`}
-              />
+              /> */}
             </li>
           )
         })}
