@@ -27,14 +27,14 @@ export default function Post(props: {
   } else {
     correctElement = (
       <video controls controlsList='nodownload'
-        className={`${props.className} border border-zinc-700`}>
+        className={`border border-zinc-700 ${props.className}`}>
         <source src={src} />
       </video>
     )
   }
 
   return (
-    <div className='select-none flex flex-col gap-2'>
+    <div className='select-none flex flex-col gap-2 pb-2 cursor-pointer'>
       {correctElement}  
       <div className='font-sans text-lg pl-3'>
         {post.title}
