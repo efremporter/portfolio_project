@@ -22,7 +22,7 @@ export default async function PhotoCarousel(props: {
 const photos = await getPhotos()
 // const photos = [1, 2, 3, 4, 5, 6, 7]
   
- const placeholder = (
+  const placeholder = (
     <div className="w-[14rem] h-[14rem] bg-zinc-700"></div>
   )
 
@@ -32,7 +32,7 @@ const photos = await getPhotos()
     ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
     photoClassName = "w-[14rem] h-[14rem]"
   } else {
-    ulClassName = "gap-4 flex-wrap justify-evenly border-l border-[#252525]"
+    ulClassName = "gap-4 flex-wrap justify-evenly border-l-2 border-[#252525]"
     photoClassName = "w-[20rem] h-[20rem] object-cover"
   }
 

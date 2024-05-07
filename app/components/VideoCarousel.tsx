@@ -30,7 +30,7 @@ const videos = [1, 2, 3, 4, 5, 6, 7]
     ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
     videoClassName = "min-w-[20rem] h-auto min-h-[14rem]"
   } else {
-    ulClassName = "gap-4 flex-wrap justify-evenly border-l border-[#252525]"
+    ulClassName = "gap-4 flex-wrap justify-evenly border-l-2 border-[#252525]"
     videoClassName = "w-[30rem] h-auto"
   }
 
