@@ -1,15 +1,15 @@
 import Project from "./Project"
-// import prisma from '@/lib/prisma'
+import prisma from '@/lib/prisma'
 
-// async function getProjects() {
-//     const videos = await prisma.project.findMany({
-//       orderBy: {
-//         createdAt: 'desc'
-//       },
-//       take: 5
-//     })
-//     return videos
-// }
+async function getProjects() {
+    const projects = await prisma.project.findMany({
+      orderBy: {
+        createdAt: 'desc'
+      },
+      take: 7
+    })
+    return projects
+}
 
 export default async function ProjectCarousel(props:{
   location: 'projectsPage' | 'homePage'
@@ -17,7 +17,7 @@ export default async function ProjectCarousel(props:{
 
   const { location } = props
 
-  const projects = [1, 2, 3, 4, 5]//, 6, 7]
+  const projects = await getProjects()
 
   let ulClassName
   if (location === 'projectsPage') {
@@ -31,7 +31,7 @@ export default async function ProjectCarousel(props:{
       {projects.map((project, i) => {
         return (
           <li key={i}>
-            <Project location={location} />
+            <Project project={project} location={location} />
           </li>
         )
       })}

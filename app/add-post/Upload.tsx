@@ -24,10 +24,9 @@ export default function Upload() {
     formData.append('file', file)
     formData.append('type', type)
     formData.append('title', title)
-    formData.append('type', type)
     formData.append('taken_on', takenOn)
     try {
-      const response = await fetch('/api/s3-upload', {
+      const response = await fetch('/api/s3-upload-post', {
         method: 'POST',
         body: formData
       })
@@ -39,7 +38,7 @@ export default function Upload() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center bg-slate-300 h-60 text-black">
+    <div className="flex flex-col justify-center items-center bg-gray-400 py-6 text-black">
       <form className="flex flex-col gap-1.5" onSubmit={handleSubmit}>
         <h1 className="text-xl pl-2 border-0 border-b-2 border-black">Create a post</h1>
         <input type='file' className="bg-white p-2" onChange={handleFileChange} />

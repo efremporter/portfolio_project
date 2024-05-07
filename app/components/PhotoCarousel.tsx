@@ -19,8 +19,8 @@ export default async function PhotoCarousel(props: {
   location: 'photosPage' | 'homePage'
 }) {
   
-// const photos = await getPhotos()
-const photos = [1, 2, 3, 4, 5, 6, 7]
+const photos = await getPhotos()
+// const photos = [1, 2, 3, 4, 5, 6, 7]
   
   const placeholder = (
     <div className="w-[14rem] h-[14rem] bg-zinc-700"></div>
@@ -41,11 +41,11 @@ const photos = [1, 2, 3, 4, 5, 6, 7]
       {photos.map((photo, i) => {
         return (
           <li key={i}>
-            {placeholder}
-            {/* <Post
+            {/* {placeholder} */}
+            <Post
               post={photo}
               className={`${photoClassName}`}
-            /> */}
+            />
           </li>
         )
       })}
