@@ -27,7 +27,7 @@ export default function Post(props: {
   } else {
     correctElement = (
       <video controls controlsList='nodownload'
-        className={`border border-zinc-700 ${props.className}`}>
+        className={`border border-zinc-700 rounded-sm ${props.className}`}>
         <source src={src} />
       </video>
     )
