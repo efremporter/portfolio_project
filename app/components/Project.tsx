@@ -33,6 +33,7 @@ export default function Project(props:{
   )
 
   const src = String(filePath)
+  const url = String(projectUrl)
 
   if (props.location === 'projectsPage') {
     return (
@@ -46,7 +47,7 @@ export default function Project(props:{
           <div className="flex flex-col justify-between gap-1">
             <div className="flex flex-col">
               <div className="text-[#A1A1A1]">Title</div>
-              <a href={String(projectUrl)} target="blank" className='flex items-center gap-1.5 break-words hover:underline'>
+              <a href={url} target="blank" className='flex items-center gap-1.5 break-words hover:underline'>
                 <div>{title}</div>
                 <OpenInNewIcon fontSize='small' />
               </a>
@@ -69,18 +70,20 @@ export default function Project(props:{
     )
   } else {
     return (
-      <div className='p-4 w-[27rem] h-auto border-2 border-[#252525] cursor-pointer hover:underline'>
-        <div className='flex flex-col gap-2'>
-          <Image alt='Project' width={1920} height={1080}
-            src={src}
-            className='w-[27rem] h-[13rem] border-2 border-[#252525] object-cover'  
-          />
-          <div className='flex flex-col gap-1.5'>
-            <div className='text-lg font-normal'>{title}</div>
-            <div className='text-[0.8125rem] font-light text-gray-400'>{description}</div>
+      <a href={url} target="_blank">
+        <div className='p-4 w-[27rem] h-auto border-2 border-[#252525] cursor-pointer hover:underline'>
+          <div className='flex flex-col gap-2'>
+            <Image alt='Project' width={1920} height={1080}
+              src={src}
+              className='w-[27rem] h-[13rem] border-2 border-[#252525] object-cover'  
+            />
+            <div className='flex flex-col gap-1.5'>
+              <div className='text-lg font-normal'>{title}</div>
+              <div className='text-[0.8125rem] font-light text-gray-400'>{description}</div>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     )
   }
 }
