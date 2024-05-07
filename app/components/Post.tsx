@@ -20,14 +20,14 @@ export default function Post(props: {
     correctElement = (
       <div className={`rounded-xl ${props.className}`}>
         <Image priority={true} alt={'img'} src={src}
-          width={100} height={100} className={`rounded-lg select-none ${props.className}`}
+          width={1000} height={1000} className={`rounded-lg select-none object-cover ${props.className}`}
         />
       </div>
     )
   } else {
     correctElement = (
       <video controls controlsList='nodownload'
-        className={`border border-zinc-700 ${props.className}`}>
+        className={`border border-zinc-700 rounded-sm ${props.className}`}>
         <source src={src} />
       </video>
     )

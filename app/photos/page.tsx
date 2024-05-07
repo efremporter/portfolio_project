@@ -1,14 +1,11 @@
-
-import prisma from "@/lib/prisma";
 import React from "react";
-import Post from '../components/Post'
 import PhotoCarousel from "../components/PhotoCarousel";
 
-export default async function Videos() {
+export default function Photos() {
 
   return (
     <div className="flex flex-col gap-4">
-      <label className='text-2xl' >
+      <label className='text-3xl' >
         Photos
       </label>
        <PhotoCarousel location={'photosPage'} />

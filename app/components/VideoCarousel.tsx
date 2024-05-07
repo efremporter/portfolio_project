@@ -18,23 +18,23 @@ async function getVideos() {
 export default async function VideoCarousel(props: {
   location: 'videosPage' | 'homePage'
 }) {
-  
   const videos = await getVideos()
+  // const videos = [1, 2, 3, 4, 5, 6, 7]
+
   const placeholder = (
     <div className="w-[20rem] h-[13rem] bg-zinc-300"></div>
   )
   let ulClassName = ''
   let videoClassName = ''
   if (props.location === 'homePage') {
-    ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
-    videoClassName = "min-w-[20rem] h-auto min-h-[14rem]"
+    ulClassName = "gap-5 pb-2 overflow-x-auto custom-scrollbar"
+    videoClassName = "min-w-[20rem] max-w-[30rem] h-auto max-h-[20rem] min-h-[14rem]"
   } else {
-    ulClassName = "gap-4 flex-wrap justify-evenly border-l border-zinc-700"
+    ulClassName = "gap-4 flex-wrap justify-evenly border-l-2 border-[#252525]"
     videoClassName = "w-[30rem] h-auto"
   }
 
   return (
-    <div>
       <ul className={`flex ${ulClassName}`}>
         {videos.map((video, i) => {
           return (
@@ -48,6 +48,5 @@ export default async function VideoCarousel(props: {
           )
         })}
       </ul>
-    </div>
   )
 }
