@@ -19,7 +19,7 @@ export default async function VideoCarousel(props: {
   location: 'videosPage' | 'homePage'
 }) {
   // const videos = await getVideos()
-const videos = [1, 2, 3, 4, 5, 6, 7]
+  const videos = [1, 2, 3, 4, 5, 6, 7]
 
   const placeholder = (
     <div className="w-[20rem] h-[13rem] bg-zinc-300"></div>
@@ -27,7 +27,7 @@ const videos = [1, 2, 3, 4, 5, 6, 7]
   let ulClassName = ''
   let videoClassName = ''
   if (props.location === 'homePage') {
-    ulClassName = "gap-5 overflow-x-auto custom-scrollbar"
+    ulClassName = "gap-5 pb-2 overflow-x-auto custom-scrollbar"
     videoClassName = "min-w-[20rem] h-auto min-h-[14rem]"
   } else {
     ulClassName = "gap-4 flex-wrap justify-evenly border-l-2 border-[#252525]"

@@ -4,10 +4,20 @@ import VideoCarousel from './components/VideoCarousel'
 // import Header from './header/Header'
 import PhotoCarousel from './components/PhotoCarousel'
 import Link from 'next/link'
+import ProjectCarousel from './components/ProjectCarousel'
 
 export default function HomePage() {
   return (
     <div className='flex flex-col h-full gap-7'>
+       <div className='flex flex-col gap-3'>
+        <div className="flex justify-between items-center">
+          <div className='text-3xl'>
+              Projects
+          </div>
+          <Link href='/projects' className='hover:underline'>View all</Link>
+        </div>
+        <ProjectCarousel location={'homePage'} />
+      </div>
       <div className='flex flex-col gap-3'>
         <div className="flex justify-between items-center">
           <div className='text-3xl'>
@@ -17,6 +27,7 @@ export default function HomePage() {
         </div>
         <PhotoCarousel location={'homePage'} />
       </div>
+
       <div className='flex flex-col gap-3  '>
         <div className="flex justify-between items-center">
           <div className='text-3xl'>
