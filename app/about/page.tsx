@@ -4,12 +4,15 @@ import React, { useEffect, useState } from "react"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
+import CheckIcon from '@mui/icons-material/Check';
+import Alert from '@mui/material/Alert';
 
 export default function AboutPage() {
 
   useEffect(() => handleResize(), [])
 
   const [smallWindow, setSmallWindow] = useState(false)
+  const [alertVisible, setAlertVisible] = useState(false)
 
   function handleResize() {
     if (typeof window !== 'undefined') {
@@ -20,6 +23,16 @@ export default function AboutPage() {
   if (typeof window !== 'undefined') {
     window.addEventListener('resize', handleResize)
   }
+
+  function handleEmailClick() {
+    navigator.clipboard.writeText("eopiscool@gmail.com").then(() => {
+      setAlertVisible(true)
+      setTimeout(() => {
+        setAlertVisible(false)
+      }, 4000)
+    })
+  }
+
   const humu = <a target='_blank' href="https://www.humu.com/" className="underline hover:text-gray-400">Humu</a>
   const kismet = <a target='_blank' href="https://www.kismethealth.com/" className="underline hover:text-gray-400">Kismet Health</a>
   const src = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/17-10-away-game.JPG-1715122078452'
@@ -49,17 +62,23 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center h-[3rem]">
         <div className='text-3xl'>
           About
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-4 items-center">
+          {alertVisible && <Alert icon={<CheckIcon fontSize="inherit" />} severity="success" onClose={() => setAlertVisible(false)}>
+            Email copied successfully.
+          </Alert>}
           <a target="_blank" href="https://www.linkedin.com/in/efrem-porter-550b0b224/">
             <LinkedInIcon fontSize="large" className="cursor-pointer text-gray-100 hover:text-gray-400"/>
           </a>
           <a target="_blank" href="https://github.com/efremporter/">
             <GitHubIcon fontSize="large" className="cursor-pointer text-gray-100 hover:text-gray-400"/>
           </a>
+          <div onClick={handleEmailClick}>
+            <EmailIcon fontSize="large" className="cursor-pointer text-gray-100 hover:text-gray-400"/>
+          </div>
         </div>
       </div>
       <div className={`flex gap-7 min-w-[40rem] p-10 pr-30 border-2 border-[#252525] ${flexClass}`}>

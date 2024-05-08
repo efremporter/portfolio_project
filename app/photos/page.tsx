@@ -5,7 +5,7 @@ export default function Photos() {
 
   return (
     <div className="flex flex-col gap-4">
-      <label className='text-3xl' >
+      <label className='text-3xl pt-2' >
         Photos
       </label>
        <PhotoCarousel location={'photosPage'} />
