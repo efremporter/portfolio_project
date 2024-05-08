@@ -39,7 +39,7 @@ export default function NavBar() {
   const pathname = usePathname()
   const liClassName = 'flex items-center gap-2.5 py-6 cursor-pointer justify-center hover:bg-[#252525]'
   return (
-    <ul className='z-10 text-gray-200 bg-black flex flex-row justify-evenly text-xl border-b-2 sticky top-0 border-[#252525]'>
+    <ul className='z-10 text-gray-100 bg-[#080A08] flex flex-row justify-evenly text-xl border-b-2 sticky top-0 border-[#252525]'>
       <Link className='flex flex-1' href="/">
         <li className={`${liClassName} ${getSelectedBorder(pathname, '')} flex-1 `}>
           {pathname === '/' ? <HomeIcon fontSize='large' /> : <HomeOutlinedIcon fontSize='large' />}
@@ -64,7 +64,7 @@ export default function NavBar() {
           {showLabels && 'Photos'}
         </li>
       </Link>
-      <Link className='flex flex-1' href="">
+      <Link className='flex flex-1' href="/about">
         <li className={`${liClassName} ${getSelectedBorder(pathname, 'about')} flex-1`}>
           {pathname === '/about' ? <PersonIcon fontSize='large' /> : <PersonOutlinedIcon fontSize='large' />}
           {showLabels && 'About'}
