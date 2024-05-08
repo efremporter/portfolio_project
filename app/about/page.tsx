@@ -81,7 +81,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <div className={`flex gap-7 min-w-[40rem] p-10 pr-30 border-2 border-[#252525] ${flexClass}`}>
+      <div className={`flex gap-7 min-w-[40rem] p-10 pr-30 border-2 border-[#252525] rounded-sm ${flexClass}`}>
         <Image priority={true} alt={'img'} src={src}
           width={1000} height={1000} className={`rounded-lg select-none object-cover w-[25rem] h-[25rem]`}
         />
