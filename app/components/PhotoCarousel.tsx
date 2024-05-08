@@ -2,24 +2,40 @@ import React from 'react'
 import Post from './Post'
 import prisma from '@/lib/prisma'
 
-async function getPhotos() {
-    const photos = await prisma.post.findMany({
-      where: {
-        type: 'photo'
-      },
-      orderBy: {
-        createdAt: 'desc'
-      },
-      take: 10
-    })
-    return photos
+async function getPhotos(limit?: number) {
+    if (limit) {
+      return await prisma.post.findMany({
+        where: {
+          type: 'photo'
+        },
+        orderBy: {
+          createdAt: 'desc'
+        },
+        take: limit
+      })
+    } else {
+      return await prisma.post.findMany({
+        where: {
+          type: 'photo'
+        },
+        orderBy: {
+          createdAt: 'desc'
+        },
+        take: 1 // change to pagination function later
+      })
+    }
 }
 
 export default async function PhotoCarousel(props: {
   location: 'photosPage' | 'homePage'
 }) {
-  
-const photos = await getPhotos()
+
+let photos 
+if (props.location === 'homePage') {
+  photos = await getPhotos(3)
+} else {
+  photos = await getPhotos()
+}
 // const photos = [1, 2, 3, 4, 5, 6, 7]
   
   const placeholder = (

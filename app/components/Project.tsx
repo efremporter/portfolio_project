@@ -42,7 +42,7 @@ export default function Project(props:{
           {/* {imgPlaceholder} */}
           <Image priority={true} alt='Project' width={1920} height={1080}
             src={src}
-            className='w-[24rem] h-[15rem] border-2 border-[#252525] object-cover'  
+            className='w-[27rem] h-[14rem] border-2 border-[#252525] object-cover'  
           />
           <div className="flex flex-col justify-between gap-1">
             <div className="flex flex-col">
