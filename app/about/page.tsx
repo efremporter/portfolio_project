@@ -21,7 +21,7 @@ export default function AboutPage() {
   }
 
   if (typeof window !== 'undefined') {
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize) 
   }
 
   function handleEmailClick() {
