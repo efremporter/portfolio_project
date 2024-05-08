@@ -33,10 +33,18 @@ export default function AboutPage() {
     })
   }
 
+  const src = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/about_me.mp4-1715206198521'
+  const aboutMeVideo = (
+      <video controls controlsList='nodownload'
+        className=" w-[40rem] h-auto rounded-sm">
+        <source src={src} />
+      </video> 
+  )
+
   const humu = <a target='_blank' href="https://www.humu.com/" className="underline hover:text-gray-400">Humu</a>
   const kismet = <a target='_blank' href="https://www.kismethealth.com/" className="underline hover:text-gray-400">Kismet Health</a>
-  const src = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/17-10-away-game.JPG-1715122078452'
-  const firstPartBio = (`Hi! My name is Efrem Porter. I'm a software engineer from Northern California. 
+  const headerBio = "Hi, my name is Efrem Porter"
+  const firstPartBio = (`I'm a software engineer from Northern California. 
     I began my journey into coding back in 2018, when I was in highschool.
     I took a couple coding classes and instantly, programming became my favorite subject.
     Immediately after graduating, I pivoted towards a sales career.
@@ -55,10 +63,10 @@ export default function AboutPage() {
     at Kismet, facilitating technical meetings and collaborating closely with our Design team.
     I enjoy all of the daily learning and struggles that come with software engineering.
     Feel free to browse through some of my work and reach out with any questions.
-    I look forward to speaking with you!
   `)
+  const fourthPartBio = "I look forward to speaking with you!"
 
-  const flexClass = smallWindow ? 'flex-row' : 'flex-col items-center align-center'
+  const flexClass = smallWindow ? 'flex-row items-start' : 'flex-col items-center align-center'
 
   return (
     <div className="flex flex-col gap-4">
@@ -82,11 +90,16 @@ export default function AboutPage() {
         </div>
       </div>
       <div className={`flex gap-7 min-w-[40rem] p-10 pr-30 border-2 border-[#252525] rounded-sm ${flexClass}`}>
-        <Image priority={true} alt={'img'} src={src}
+        {aboutMeVideo}
+        {/* <Image priority={true} alt={'img'} src={src}
           width={1000} height={1000} className={`rounded-lg select-none object-cover w-[25rem] h-[25rem]`}
-        />
-        <div className="font-sans text-lg">
-          {firstPartBio}{humu}{secondPartBio}{kismet}{thirdPartBio}
+        /> */}
+        <div className="flex flex-col gap-4 font-sans text-lg">
+          <div className="text-xl">{headerBio}</div>
+          <div>
+            {firstPartBio}{humu}{secondPartBio}{kismet}{thirdPartBio}
+          </div>
+          <div>{fourthPartBio}</div>
         </div>
       </div>
     </div>
