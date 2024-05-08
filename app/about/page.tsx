@@ -66,7 +66,7 @@ export default function AboutPage() {
   `)
   const fourthPartBio = "I look forward to speaking with you!"
 
-  const flexClass = smallWindow ? 'flex-row items-center' : 'flex-col items-center align-center'
+  const flexClass = smallWindow ? 'flex-row items-start' : 'flex-col items-center align-center'
 
   return (
     <div className="flex flex-col gap-4">

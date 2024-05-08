@@ -21,7 +21,7 @@ async function getPhotos(limit?: number) {
         orderBy: {
           createdAt: 'desc'
         },
-        take: 1 // change to pagination function later
+        take: 15 // change to pagination function later
       })
     }
 }
@@ -32,7 +32,7 @@ export default async function PhotoCarousel(props: {
 
 let photos 
 if (props.location === 'homePage') {
-  photos = await getPhotos(3)
+  photos = await getPhotos(10)
 } else {
   photos = await getPhotos()
 }
