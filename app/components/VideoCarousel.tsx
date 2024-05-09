@@ -6,6 +6,7 @@ import { countPosts, getVideos } from '../photos/actions'
 export default async function VideoCarousel(props: {
   location: 'videosPage' | 'homePage'
 }) {
+  
   const onHomePage = props.location === 'homePage'
   const maxPosts = await countPosts('video')
   const videos = await getVideos()

@@ -24,6 +24,7 @@ export default function InfiniteScrollCarousel(props: {
     if (inView) {
       loadMorePosts()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView])
 
   async function loadMorePosts() {
@@ -55,7 +56,7 @@ export default function InfiniteScrollCarousel(props: {
             <li key={i}>
               <Post
                 post={post}
-                className={`object-cover ${postClassName}`}
+                className={postClassName}
               />
             </li>
           )
