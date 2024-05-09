@@ -7,7 +7,7 @@ export type PostType = {
   type: String
 }
 
-export default function Type(props: {
+export default function Post(props: {
   post: PostType
   className?: string
 }) {
