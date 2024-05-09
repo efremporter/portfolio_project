@@ -1,8 +1,4 @@
 import React from 'react'
-import VideoCarousel from './components/VideoCarousel'
-// import SearchBar from './header/SearchBar'
-// import Header from './header/Header'
-import PhotoCarousel from './components/PhotoCarousel'
 import Link from 'next/link'
 import ProjectCarousel from './components/ProjectCarousel'
 import PostCarousel from './components/PostCarousel'

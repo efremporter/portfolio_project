@@ -1,6 +1,6 @@
 import React from 'react'
 import Post from './Post'
-import { countPosts, getPhotos, getVideos } from '../photos/actions'
+import { countPosts, getPhotos, getVideos } from '../posts/actions'
 import InfiniteScrollCarousel from './InfiniteScrollCarousel'
 
 export default async function PostCarousel(props: {

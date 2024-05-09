@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
-import { getPhotos, getVideos } from "../photos/actions"
+import { getPhotos, getVideos } from "../posts/actions"
 import Post, { PostType } from './Post'
 
 
