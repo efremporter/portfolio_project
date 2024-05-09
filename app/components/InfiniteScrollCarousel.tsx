@@ -46,7 +46,7 @@ export default function InfiniteScrollCarousel(props: {
   if (type === 'photo') {
     postClassName = 'w-[20rem] h-[20rem]'
   } else {
-    postClassName = "w-[28rem] h-auto"
+    postClassName = "w-[40rem] h-auto"
   }
   return (
     <div>
