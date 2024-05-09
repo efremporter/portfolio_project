@@ -1,5 +1,5 @@
 import React from "react";
-import VideoCarousel from "../components/VideoCarousel";
+import PostCarousel from "../components/PostCarousel";
 
 export default function Videos() {
 
@@ -8,7 +8,7 @@ export default function Videos() {
       <label className='text-3xl'>
         Videos
       </label>
-       <VideoCarousel location={'videosPage'} />
+       <PostCarousel type='video' location='videosPage' />
     </div>
   )
 }

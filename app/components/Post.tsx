@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import React from 'react'
 
-export type Post = {
+export type PostType = {
   filePath: String
   title: String
   type: String
 }
 
 export default function Post(props: {
-  post: Post
+  post: PostType
   className?: string
 }) {
 

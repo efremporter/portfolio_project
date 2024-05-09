@@ -1,10 +1,7 @@
 import React from 'react'
-import VideoCarousel from './components/VideoCarousel'
-// import SearchBar from './header/SearchBar'
-// import Header from './header/Header'
-import PhotoCarousel from './components/PhotoCarousel'
 import Link from 'next/link'
 import ProjectCarousel from './components/ProjectCarousel'
+import PostCarousel from './components/PostCarousel'
 
 export default function HomePage() {
   return (
@@ -16,7 +13,7 @@ export default function HomePage() {
           </div>
           <Link href='/photos' className='hover:underline'>View all</Link>
         </div>
-        <PhotoCarousel location={'homePage'} />
+        <PostCarousel type="photo" location='homePage' />
       </div>
 
       <div className='flex flex-col gap-3'>
@@ -26,7 +23,7 @@ export default function HomePage() {
           </div>
           <Link href='/videos' className='hover:underline'>View all</Link>
         </div>
-        <VideoCarousel location={'homePage'} />
+        <PostCarousel type="video" location={'homePage'} />
       </div>
 
       <div className='flex flex-col gap-3'>
