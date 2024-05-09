@@ -1,5 +1,6 @@
 import React from "react";
 import PhotoCarousel from "../components/PhotoCarousel";
+import InfiniteScrollCarousel from "../components/InfiniteScrollCarousel";
 
 export default function Photos() {
 
