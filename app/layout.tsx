@@ -17,6 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/images/favicon.ico" sizes="any" /> 
+      </head>
       <body className={inter.className}>
         <NavBar />
         <div className="h-4" />
