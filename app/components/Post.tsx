@@ -6,21 +6,24 @@ export type PostType = {
   title: String
   type: String
   takenOn: String
+  takenOn: String
 }
 
 export default function Post(props: {
   post: PostType
   className?: string
   location?: string
+  location?: string
 }) {
 
   const { post } = props
   const src = String(post.filePath)
  
+ 
   let correctElement
   if (post.type === 'photo') {
     correctElement = (
-      <div className='flex flex-col gap-2'>
+      <div>
         <div className={`rounded-xl ${props.className}`}>
           <Image priority={true} alt={'img'} src={src}
             width={1000} height={1000} className={`rounded-lg select-none object-cover ${props.className}`}
@@ -49,6 +52,17 @@ export default function Post(props: {
 
   return (
     <div className='flex flex-col gap-2 pb-2 '>
+      {correctElement}
+      {post.type === 'video' && 
+        <div className='flex justify-between items-center'>
+          <div className='font-sans text-md'>
+            {post.title}
+          </div>
+          <div className='font-sans text-sm'>
+            {post.takenOn}
+          </div>
+        </div>
+      }
       {correctElement}
       {post.type === 'video' && 
         <div className='flex justify-between items-center'>
