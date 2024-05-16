@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image"
 import React, { useEffect, useState } from "react"
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -89,11 +88,8 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <div className={`flex gap-7 min-w-[40rem] p-10 pr-30 border-2 border-[#252525] rounded-sm ${flexClass}`}>
+      <div className={`flex gap-7 min-w-[30rem] p-10 pr-30 border-2 border-[#252525] rounded-sm ${flexClass}`}>
         {aboutMeVideo}
-        {/* <Image priority={true} alt={'img'} src={src}
-          width={1000} height={1000} className={`rounded-lg select-none object-cover w-[25rem] h-[25rem]`}
-        /> */}
         <div className="flex flex-col gap-4 font-sans text-lg">
           <div className="text-xl">{headerBio}</div>
           <div>

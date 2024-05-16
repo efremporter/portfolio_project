@@ -26,7 +26,7 @@ export default function Project(props:{
   if (props.location === 'projectsPage') {
     return (
       <div className="p-7 rounded-md border-2 border-[#252525] cursor-default">
-        <div className="flex flex-row justify-start align-center gap-10">
+        <div className="flex flex-col justify-start align-center gap-10 sm:flex-row">
           <Image priority={true} alt='Project' width={1920} height={1080}
             src={src}
             className='w-[27rem] h-[14rem] border-2 border-[#252525] object-cover'  
@@ -39,7 +39,7 @@ export default function Project(props:{
                 <OpenInNewIcon fontSize='small' />
               </a>
             </div>
-            <div className="flex flex-col break-words">
+            <div className="flex flex-col sm:break-words">
               <div className="text-[#A1A1A1]">Description</div>
               {description}
             </div>
