@@ -4,9 +4,9 @@ import React, { BaseSyntheticEvent, useState } from "react"
 export default function Upload() {
 
   const [file, setFile] = useState<File | null>(null)
-  const [title, setTitle] = useState('Title')
+  const [title, setTitle] = useState('')
   const [type, setType] = useState('')
-  const [takenOn, setTakenOn] = useState('testDate')
+  const [takenOn, setTakenOn] = useState('')
   const [uploading, setUploading] = useState(false)
 
   const handleFileChange = (e: BaseSyntheticEvent) => {
@@ -44,6 +44,8 @@ export default function Upload() {
         <input type='file' className="bg-white p-2" onChange={handleFileChange} />
         <input type="text" placeholder="Title" className="pl-2 py-2"
           value={title} onChange={e => setTitle(e.target.value)} />
+        <input type="text" placeholder="Taken on" className="pl-2 py-2"
+          value={takenOn} onChange={e => setTakenOn(e.target.value)} />
         <input type="text" placeholder="Type" className="pl-2 py-2"
           value={type} onChange={e => setType(e.target.value)} />
         <button type="submit" className="bg-black text-white p-2">
