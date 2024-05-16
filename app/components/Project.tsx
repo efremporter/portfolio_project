@@ -19,18 +19,6 @@ export default function Project(props:{
 }) {
 
   const { title, description, languages, createdOn, projectUrl, filePath } = props.project
-  const projectPlaceholder = {
-    title: 'Facecrook (clone of Facebook)',
-    description: 'Full stack clone of Facebook. Users can create an account, post, comment, like, add friends, and more!',
-    languages: 'React/Redux, JavaScript, Ruby on Rails, PostgreSQL',
-    createdOn: 'January 2022',
-    projectUrl: 'https://www.linkedin.com/posts/activity-6916572952155078656-uhYz?utm_source=share&utm_medium=member_desktop',
-    filepath: 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/Untitled.png-1715107917529',
-  }
-
-  const imgPlaceholder = (
-    <div className="min-w-[24rem] h-[15rem] bg-gray-500 border-2 border-[#252525]" />
-  )
 
   const src = String(filePath)
   const url = String(projectUrl)
@@ -39,7 +27,6 @@ export default function Project(props:{
     return (
       <div className="p-7 rounded-md border-2 border-[#252525] cursor-default">
         <div className="flex flex-row justify-start align-center gap-10">
-          {/* {imgPlaceholder} */}
           <Image priority={true} alt='Project' width={1920} height={1080}
             src={src}
             className='w-[27rem] h-[14rem] border-2 border-[#252525] object-cover'  
