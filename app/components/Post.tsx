@@ -23,7 +23,7 @@ export default function Post(props: {
   let correctElement
   if (post.type === 'photo') {
     correctElement = (
-      <div>
+      <div className='flex flex-col gap-2'>
         <div className={`rounded-xl ${props.className}`}>
           <Image priority={true} alt={'img'} src={src}
             width={1000} height={1000} className={`rounded-lg select-none object-cover ${props.className}`}
