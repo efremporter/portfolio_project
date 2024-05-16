@@ -36,6 +36,7 @@ export default async function PostCarousel(props: {
               <Post
                 post={post}
                 className={`${postClassName}`}
+                location={'homePage'}
               />
             </li>
           )
