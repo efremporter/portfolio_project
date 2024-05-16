@@ -25,7 +25,7 @@ export default function Project(props:{
 
   if (props.location === 'projectsPage') {
     return (
-      <div className="p-7 rounded-md border-2 border-[#252525] cursor-default">
+      <div className="p-7 rounded-md border-2 border-[#252525] cursor-default min-w-[70rem]">
         <div className="flex flex-row justify-start align-center gap-10">
           <Image priority={true} alt='Project' width={1920} height={1080}
             src={src}
