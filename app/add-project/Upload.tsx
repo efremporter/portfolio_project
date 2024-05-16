@@ -4,11 +4,11 @@ import React, { BaseSyntheticEvent, useState } from "react"
 export default function UploadProject() {
 
   const [file, setFile] = useState<File | null>(null)
-  const [title, setTitle] = useState('Facecrook (clone of Facebook)')
-  const [description, setDescription] = useState('Full stack clone of Facebook. Users can create an account, post, comment, like, add friends, and more!')
-  const [languages, setLanguages] = useState('React/Redux, JavaScript, Ruby on Rails, PostgreSQL')
-  const [createdOn, setCreatedOn] = useState('January 2022')
-  const [projectUrl, setProjectUrl] = useState('https://www.linkedin.com/posts/activity-6916572952155078656-uhYz?utm_source=share&utm_medium=member_desktop')
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [languages, setLanguages] = useState('')
+  const [createdOn, setCreatedOn] = useState('')
+  const [projectUrl, setProjectUrl] = useState('')
   const [uploading, setUploading] = useState(false)
 
   const handleFileChange = (e: BaseSyntheticEvent) => {
