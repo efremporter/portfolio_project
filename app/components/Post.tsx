@@ -40,7 +40,7 @@ export default function Post(props: {
     )
   } else {
     correctElement = (
-      <video controls controlsList='nodownload'
+      <video controls controlsList='nodownload' preload="auto"
         className={`border border-zinc-700 rounded-sm ${props.className}`}>
         <source src={src} />
       </video>
