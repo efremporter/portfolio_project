@@ -50,7 +50,7 @@ export default function InfiniteScrollCarousel(props: {
   }
   return (
     <div>
-      <ul className={`flex gap-4 flex-wrap justify-evenly border-l-2 border-[#252525]`}>
+      <ul className={`flex gap-4 flex-wrap justify-evenly`}>
         {posts.map((post, i) => {
           return (
             <li key={i}>

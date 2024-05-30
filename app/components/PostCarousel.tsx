@@ -29,7 +29,7 @@ export default async function PostCarousel(props: {
 
   if (onHomePage) {
     return (
-      <ul className='flex gap-5 pb-2 overflow-x-auto custom-scrollbar'>
+      <ul className='flex gap-5 pb-2 overflow-x-scroll custom-scrollbar'>
         {posts.map((post, i) => {
           return (
             <li key={i}>
