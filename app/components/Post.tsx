@@ -42,7 +42,7 @@ export default function Post(props: {
   } else {
     correctElement = (
       <video controls controlsList='nodownload' preload="auto"
-        // poster="https://portfolio-project-storage.s3.us-west-1.amazonaws.com/24-03-panama-boat.jpeg-1715887216050"
+        poster={String(post.poster) ?? ''}
         className={`border border-zinc-700 rounded-sm ${props.className}`}>
         <source src={src} />
       </video>
