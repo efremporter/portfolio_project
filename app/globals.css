@@ -21,3 +21,9 @@ body {
   padding: 0rem 2rem 2rem 2rem;
   background-color: #080A08;
 }
+
+@media screen and (max-width: 580px) {
+  body {
+    padding: 0rem 1rem;
+  }
+}

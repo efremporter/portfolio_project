@@ -6,6 +6,7 @@ export type PostType = {
   title: String
   type: String
   takenOn: String
+  poster: String | null
 }
 
 export default function Post(props: {
@@ -40,7 +41,8 @@ export default function Post(props: {
     )
   } else {
     correctElement = (
-      <video controls controlsList='nodownload'
+      <video controls controlsList='nodownload' preload="auto"
+        poster={String(post.poster) ?? ''}
         className={`border border-zinc-700 rounded-sm ${props.className}`}>
         <source src={src} />
       </video>

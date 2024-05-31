@@ -33,9 +33,12 @@ export default function AboutPage() {
   }
 
   const src = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/about_me.mp4-1715838564387'
+  const poster = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/about_me.png'
+  const width = smallWindow ? "w-[40rem]" : "min-w-[20rem]"
   const aboutMeVideo = (
       <video controls controlsList='nodownload'
-        className=" w-[40rem] h-auto rounded-sm">
+        poster={poster}
+        className={`${width} h-auto rounded-sm`} preload="auto">
         <source src={src} />
       </video> 
   )
@@ -69,8 +72,8 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-between items-center h-[3rem]">
-        <div className='text-3xl'>
+      <div className="flex justify-end items-center h-[3rem] xs:justify-between">
+        <div className='text-3xl hidden xs:block'>
           About
         </div>
         <div className="flex gap-4 items-center">
@@ -88,8 +91,10 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <div className={`flex gap-7 min-w-[30rem] p-10 pr-30 border-2 border-[#252525] rounded-sm ${flexClass}`}>
-        {aboutMeVideo}
+      <div className={`min-w-[21rem] flex gap-7 p-5 border-2 border-[#252525] rounded-sm ${flexClass} sm:p-10`}>
+        <div className="max-w-[40rem] sm:min-w-[40rem] ">
+          {aboutMeVideo}
+        </div>
         <div className="flex flex-col gap-4 font-sans text-lg">
           <div className="text-xl">{headerBio}</div>
           <div>
