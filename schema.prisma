@@ -14,7 +14,6 @@ model Post {
   type      String
   takenOn   String
   filePath  String
-  poster    String?
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 }
