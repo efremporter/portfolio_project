@@ -6,7 +6,7 @@ export type PostType = {
   title: String
   type: String
   takenOn: String
-  poster?: String
+  poster: String | null
 }
 
 export default function Post(props: {
