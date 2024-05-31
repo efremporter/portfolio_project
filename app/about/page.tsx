@@ -35,6 +35,7 @@ export default function AboutPage() {
   const src = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/about_me.mp4-1715838564387'
   const aboutMeVideo = (
       <video controls controlsList='nodownload'
+        // poster="https://portfolio-project-storage.s3.us-west-1.amazonaws.com/24-01-cyprus-friend.jpeg-1715887081822"
         className=" w-[40rem] h-auto rounded-sm" preload="auto">
         <source src={src} />
       </video> 
