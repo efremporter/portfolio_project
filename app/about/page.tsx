@@ -72,8 +72,8 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-end items-center h-[3rem] xs:justify-between">
-        <div className='text-3xl hidden xs:block'>
+      <div className="flex justify-end items-center h-[3rem] xxs:justify-between">
+        <div className='text-3xl hidden xxs:block'>
           About
         </div>
         <div className="flex gap-4 items-center">
