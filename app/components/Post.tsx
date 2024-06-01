@@ -43,7 +43,7 @@ export default function Post(props: {
     correctElement = (
       <video controls controlsList='nodownload' preload="auto"
         poster={String(post.poster) ?? ''}
-        className={`border border-zinc-700 rounded-sm ${props.className}`}>
+        className={`border border-zinc-700 rounded-sm object-cover ${props.className}`}>
         <source src={src} />
       </video>
     )
