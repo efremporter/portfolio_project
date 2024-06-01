@@ -24,7 +24,7 @@ export default async function PostCarousel(props: {
   if (type === 'photo') {
     postClassName = 'w-[14rem] h-[14rem]'
   } else {
-    postClassName = 'min-w-[20rem] max-w-[30rem] h-auto max-h-[20rem] min-h-[14rem]'
+    postClassName = 'min-w-[20rem] max-w-[30rem] h-[17rem]'
   }
 
   if (onHomePage) {
