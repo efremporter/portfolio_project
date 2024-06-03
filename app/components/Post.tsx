@@ -41,7 +41,7 @@ export default function Post(props: {
     )
   } else {
     correctElement = (
-      <video controls controlsList='nodownload' preload="auto"
+      <video controls controlsList='nodownload' preload="auto" loop
         poster={String(post.poster) ?? ''}
         className={`border border-zinc-700 rounded-sm object-cover ${props.className}`}>
         <source src={src} />

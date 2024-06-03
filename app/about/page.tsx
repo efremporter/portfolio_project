@@ -36,7 +36,7 @@ export default function AboutPage() {
   const poster = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/about_me.png'
   const width = smallWindow ? "w-[40rem]" : "min-w-[20rem]"
   const aboutMeVideo = (
-      <video controls controlsList='nodownload'
+      <video controls controlsList='nodownload' loop
         poster={poster}
         className={`${width} h-auto rounded-sm`} preload="auto">
         <source src={src} />
