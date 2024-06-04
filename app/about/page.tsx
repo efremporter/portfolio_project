@@ -32,8 +32,8 @@ export default function AboutPage() {
     })
   }
 
-  const src = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/about_me.mp4-1715838564387'
-  const poster = 'https://portfolio-project-storage.s3.us-west-1.amazonaws.com/about_me.png'
+  const src = 'https://duuwxj0q87zix.cloudfront.net/about_me.mp4-1715838564387'
+  const poster = 'https://duuwxj0q87zix.cloudfront.net/about_me.png'
   const width = smallWindow ? "w-[40rem]" : "min-w-[20rem]"
   const aboutMeVideo = (
       <video controls controlsList='nodownload' loop
