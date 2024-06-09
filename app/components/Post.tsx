@@ -28,11 +28,11 @@ export default function Post(props: {
           />
         </div>
         <div className='flex justify-between items-center'>
-          <div className='font-sans text-md'>
+          <div className='font-sans text-md select-none'>
             {post.title}
           </div>
           {props.location !== 'homePage' && 
-            <div className='font-sans text-sm'>
+            <div className='font-sans text-sm select-none'>
               {post.takenOn}
             </div>
           }
@@ -50,11 +50,11 @@ export default function Post(props: {
   }
 
   return (
-    <div className='flex flex-col gap-2 pb-2 '>
+    <div className='flex flex-col gap-2 pb-2 select-none'>
       {correctElement}
       {post.type === 'video' && 
         <div className='flex justify-between items-center'>
-          <div className='font-sans text-md'>
+          <div className='font-sans text-md select-none'>
             {post.title}
           </div>
           <div className='font-sans text-sm'>

@@ -58,14 +58,14 @@ export default function Project(props:{
   } else {
     return (
       <a href={url} target="_blank">
-        <div className='p-4 w-[27rem] h-auto border-2 border-[#252525] cursor-pointer hover:underline'>
-          <div className='flex flex-col gap-2'>
+        <div className='p-4 w-[27rem] h-auto border-2 border-[#252525] cursor-pointer select-none hover:underline'>
+          <div className='flex flex-col gap-2 \'>
             <Image alt='Project' width={1920} height={1080}
               src={src}
               className='w-[27rem] h-[13rem] border-2 border-[#252525] object-cover'  
             />
             <div className='flex flex-col gap-1.5'>
-              <div className='text-lg font-normal'>{title}</div>
+              <div className='text-lg font-normal select-none'>{title}</div>
               <div className='text-[0.8125rem] font-light text-gray-400'>{description}</div>
             </div>
           </div>
