@@ -6,8 +6,6 @@ import FolderCopyOutlinedIcon from '@mui/icons-material/FolderCopyOutlined';
 import FolderCopyIcon from '@mui/icons-material/FolderCopy';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import ImageIcon from '@mui/icons-material/Image';
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
-import PersonIcon from '@mui/icons-material/Person';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 

@@ -38,29 +38,20 @@ export default function AboutPage(props: {
       return (
         <div className="relative flex flex-col items-center gap-5">
           <div>{bio}</div>
-          <div className="bg-black pl-0.5 pt-0.5 bottom-0 right-0 text-base self-end cursor-pointer hover:underline"
-            onClick={() => setShowMore(false)}
-          >
-            Show Less
-          </div>
         </div>
       )
     } else {
       return (
-        <div className="relative">
-          <div className="flex flex-col gap-4">
-            <div>{headerBio}</div>
-            <div>{firstPartBio}</div>
-          </div>
-          <div
-            className=" bg-black pl-0.5 py-0.5 absolute bottom-[1px] right-0 text-base cursor-pointer hover:underline"
-            onClick={() => setShowMore(true)}
-          >
-            Show More
-          </div>
+        <div className="flex flex-col gap-4 font-sans text-xl text-gray-100">
+          <div>{headerBio}</div>
+          <div>{firstPartBio}</div>
         </div>
       )
     }
+  }
+
+  function handleShowMore() {
+    setShowMore(!showMore)
   }
 
   function handleFormatChange(type: string) {
@@ -106,7 +97,7 @@ export default function AboutPage(props: {
   const headerBio = "Hi, I'm Efrem"
   const correctPadding = showVideo ? '' : 'p-10'
   const correctSmallPadding = showVideo ? '' : 'p-5'
-  const correctBackgroundColor = showVideo ? 'bg-[#171717]' : ''
+  const correctBackgroundColor = showVideo ? 'bg-[#171717]' : 'bg-[#171717]'
 
   const firstPartBio = (`I'm a software engineer based in San Francisco, California. 
     My coding journey began in 2018, and I’ve been honing my skills ever since. 
@@ -134,7 +125,7 @@ export default function AboutPage(props: {
     If you have any questions or would like to connect, don't hesitate to reach out!`)
 
   const bio = (
-    <div className="flex flex-col gap-4 font-sans text-xl">
+    <div className="flex flex-col gap-4 font-sans text-xl text-gray-100">
       {headerBio}
       <div>
         {firstPartBio}{humu}{secondPartBio}{kismet}{thirdPartBio}
@@ -167,15 +158,22 @@ export default function AboutPage(props: {
         </div>
       </div>
       <div>
-      <div className="flex items-center justify-start gap-3 text-2xl pl-1 pb-2">
-        <div className={`cursor-pointer ${showVideo ? '' : 'underline'}`} onClick={() => handleFormatChange('text')}>Text</div>
-        <div>|</div>
-        <div className={`cursor-pointer ${showVideo ? 'underline' : ''}`} onClick={() => handleFormatChange('video')}>Video</div>
-      </div>
-        <div className={`min-w-[21rem] flex gap-7 ${correctSmallPadding} border-2 border-[#252525] rounded-sm flex-col items-center align-center ${correctBackgroundColor} sm:${correctPadding}`}>
-          <div className="flex flex-col gap-4 font-sans text-xl">
-            {getBio()}
+        <div className="flex items-center justify-start gap-3 text-2xl pl-1 pb-2">
+          <div className={`cursor-pointer ${showVideo ? '' : 'underline'}`} onClick={() => handleFormatChange('text')}>Text</div>
+          <div>|</div>
+          <div className={`cursor-pointer ${showVideo ? 'underline' : ''}`} onClick={() => handleFormatChange('video')}>Video</div>
+        </div>
+        <div className="flex flex-col border bg-[rgb(0,0,0)] border-[#c1bbb7] rounded-sm">
+          <div className={`min-w-[21rem] flex gap-7 bg-green-20 ${correctSmallPadding} flex-col items-center align-center bg-[#171717] sm:${correctPadding} sm:pb-2`}>
+            <div className="flex flex-col gap-4">
+              {getBio()}
+            </div>
           </div>
+          {!showVideo && <div onClick={handleShowMore}
+            className="self-end text-right w-full pb-2 pr-3 bg-[#171717] text-gray-100 text-base cursor-pointer hover:underline"
+          >
+            Show {showMore ? 'Less' : 'More'}
+          </div>}
         </div>
       </div>
     </div>
