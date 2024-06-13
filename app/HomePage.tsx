@@ -6,27 +6,6 @@ import PostCarousel from './components/PostCarousel'
 export default function HomePage() {
   return (
     <div className='flex flex-col h-full gap-3 pt-2 min-w-[250px]'>
-
-      <div className='flex flex-col gap-3'>
-        <div className="flex justify-between items-center">
-          <div className='text-3xl select-none'>
-              Videos
-          </div>
-          <Link href='/videos' className='select-none hover:underline'>View all</Link>
-        </div>
-        <PostCarousel type="video" location={'homePage'} />
-      </div>
-
-      <div className='flex flex-col gap-3'>
-        <div className="flex justify-between items-center">
-          <div className='text-3xl select-none'>
-              Photos
-          </div>
-          <Link href='/photos' className='select-none hover:underline'>View all</Link>
-        </div>
-        <PostCarousel type="photo" location='homePage' />
-      </div>
-
       <div className='flex flex-col gap-3'>
         <div className="flex justify-between items-center">
           <div className='text-3xl select-none'>
