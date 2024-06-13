@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import ProjectCarousel from './components/ProjectCarousel'
-import PostCarousel from './components/PostCarousel'
 
 export default function HomePage() {
   return (

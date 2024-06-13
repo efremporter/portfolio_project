@@ -43,30 +43,35 @@ export default function AboutPage() {
       </video> 
   )
 
-  const humu = <a target='_blank' href="https://www.humu.com/" className="underline hover:text-gray-400">Humu</a>
+  const humu = <a target='_blank' href="https://support.humu.com/hc/en-us" className="underline hover:text-gray-400">Humu</a>
   const kismet = <a target='_blank' href="https://www.kismethealth.com/" className="underline hover:text-gray-400">Kismet Health</a>
-  const headerBio = "Hi, my name is Efrem Porter"
-  const firstPartBio = (`I'm a software engineer from Northern California. 
-    I began my journey into coding back in 2018, when I was in highschool.
-    I took a couple coding classes and instantly, programming became my favorite subject.
-    Immediately after graduating, I pivoted towards a sales career.
-    I quickly realized that I wasn't satisfied simply representing the product. I wanted to actually build it.
-    Two months after graduating from App Academy's 6-month programming bootcamp,
-    I landed my first job as a software engineer at `)
-  const secondPartBio = (`
-    (HR/Productivity). At Humu I learned how to write Slab documents,
-    compose unit tests & E2E tests, implement impression logging, and more.
-    Next, I joined `)
-  const thirdPartBio = (`
-    a very early-stage telehealth startup. Here, I took on much more responsibility as I was responsible for 
-    creating responsive and reusable React Components from scratch. These customer-facing
-    components were used all over our app. In addition, I learned how to write component tests
-    and style components using TailwindCSS. Most importantly, I became more of a leader
-    at Kismet, facilitating technical meetings and collaborating closely with our Design team.
-    I enjoy all of the daily learning and struggles that come with software engineering.
-    Feel free to browse through some of my work and reach out with any questions.
-  `)
-  const fourthPartBio = "I look forward to speaking with you!"
+  
+  const headerBio = "Hi, I'm Efrem"
+
+  const firstPartBio = (`I'm a software engineer based in San Francisco, California. 
+    My coding journey began in 2018, and I’ve been honing my skills ever since. 
+    I enjoy building robust and user-friendly applications and tackling 
+    complex challenges head-on. Over the years, I've gained extensive experience 
+    in various aspects of software development. At `)
+    
+  const secondPartBio = (`, I worked on an HR/Productivity tool. In addition to 
+    developing, I improved my skills writing Slab documents, unit tests & E2E tests, 
+    impression logging and more. My time at `) 
+
+  const thirdPartBio = (` allowed me to delve deeper into HealthTech and the start up space. 
+    There, I was responsible for creating responsive and reusable React Components 
+    from scratch, writing component tests and styling components using TaliwindCSS,
+    and facilitating cross-functional collaboration with stakeholders and our design
+    team. I am a lover of learning and thrive when challenged by new engineering adventures.`)
+ 
+  const fourthPartBio = (`I am proficient in Ruby on Rails, Python, NodeJS, writing 
+    component tests and end-to-end tests, and I have a particular affinity for 
+    React, Redux, NextJS, TailwindCSS, TypeScript, JavaScript, PostgreSQL, and 
+    AWS (S3 and CloudFront). My goal is always to create impactful and efficient 
+    solutions, whether I'm working on a team or leading a project. When I'm not 
+    coding, you can find me either playing pool, enoying a family barbeque, or crushing my 
+    friends at Spikeball. Feel free to browse through my portfolio to see some of my work. 
+    If you have any questions or would like to connect, don't hesitate to reach out!`)
 
   const flexClass = smallWindow ? 'flex-row items-start' : 'flex-col items-center align-center'
 
