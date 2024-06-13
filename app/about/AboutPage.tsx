@@ -38,7 +38,7 @@ export default function AboutPage(props: {
       return (
         <div className="relative flex flex-col items-center gap-5">
           <div>{bio}</div>
-          <div className="absolute bottom-0 right-1 text-base cursor-pointer hover:underline"
+          <div className="bg-black pl-0.5 pt-0.5 bottom-0 right-0 text-base self-end cursor-pointer hover:underline"
             onClick={() => setShowMore(false)}
           >
             Show Less
@@ -53,7 +53,7 @@ export default function AboutPage(props: {
             <div>{firstPartBio}</div>
           </div>
           <div
-            className="absolute bottom-0 right-0 text-base cursor-pointer hover:underline"
+            className=" bg-black pl-0.5 py-0.5 absolute bottom-[1px] right-0 text-base cursor-pointer hover:underline"
             onClick={() => setShowMore(true)}
           >
             Show More
@@ -148,7 +148,7 @@ export default function AboutPage(props: {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-end items-center mb-2 h-[3rem] xxs:justify-between">
-        <div className='text-4xl select-none hidden xxs:block'>
+        <div className='text-3xl select-none hidden xxs:block'>
           {header}
         </div>
         <div className="flex gap-4 items-center relative">
