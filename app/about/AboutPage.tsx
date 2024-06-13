@@ -38,7 +38,7 @@ export default function AboutPage(props: {
       return (
         <div className="relative flex flex-col items-center gap-5">
           <div>{bio}</div>
-          <div className="absolute bottom-0 right-0 text-base cursor-pointer hover:underline"
+          <div className="absolute bottom-1 right-1 text-base cursor-pointer hover:underline"
             onClick={() => setShowMore(false)}
           >
             Show Less
