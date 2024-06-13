@@ -1,5 +1,5 @@
 import React from "react";
-import PostCarousel from "../components/PostCarousel";
+import PostCarousel from "../../components/PostCarousel";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Link from 'next/link'
 

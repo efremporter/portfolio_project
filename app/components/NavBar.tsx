@@ -30,6 +30,12 @@ export default function NavBar() {
   function getSelectedBorder(currentPathname: string, pathname: string) {
     if (currentPathname.slice(1) === pathname) {
       return 'border-b border-gray-200'
+    } else {
+      // Handle videosPage/photosPage
+      if (currentPathname.slice(1) === pathname + '/photos' ||
+        currentPathname.slice(1) === pathname + '/videos') {
+        return 'border-b border-gray-200'
+      }
     }
     return ''
   }
@@ -52,14 +58,8 @@ export default function NavBar() {
       </Link>
       <Link className='flex flex-1' href="/media">
         <li className={`${liClassName} ${getSelectedBorder(pathname, 'media')} flex-1`}>
-          {pathname === '/media' ? <ImageIcon fontSize='large' /> : <ImageOutlinedIcon fontSize='large' />}
+          {pathname.includes('/media') ? <ImageIcon fontSize='large' /> : <ImageOutlinedIcon fontSize='large' />}
           {showLabels && 'Media'}
-        </li>
-      </Link>
-      <Link className='flex flex-1' href="/about">
-        <li className={`${liClassName} ${getSelectedBorder(pathname, 'about')} flex-1`}>
-          {pathname === '/about' ? <PersonIcon fontSize='large' /> : <PersonOutlinedIcon fontSize='large' />}
-          {showLabels && 'About'}
         </li>
       </Link>
     </ul>

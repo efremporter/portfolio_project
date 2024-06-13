@@ -1,5 +1,5 @@
 import React from "react";
-import PostCarousel from "../components/PostCarousel";
+import PostCarousel from "../../components/PostCarousel";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Link from 'next/link'
 
@@ -15,7 +15,7 @@ export default function Photos() {
           Photos
         </label>
       </div>
-      <PostCarousel type='photo' location='photosPage' />
+       <PostCarousel type='photo' location='photosPage' />
     </div>
   )
 }

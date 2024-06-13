@@ -6,12 +6,16 @@ import EmailIcon from '@mui/icons-material/Email';
 import CheckIcon from '@mui/icons-material/Check';
 import Alert from '@mui/material/Alert';
 
-export default function AboutPage() {
+export default function AboutPage(props: {
+  homePage: boolean
+}) {
 
   useEffect(() => handleResize(), [])
 
   const [smallWindow, setSmallWindow] = useState(false)
   const [alertVisible, setAlertVisible] = useState(false)
+  const [showMore, setShowMore] = useState(false)
+  const [showVideo, setShowVideo] = useState(false)
 
   function handleResize() {
     if (typeof window !== 'undefined') {
@@ -21,6 +25,54 @@ export default function AboutPage() {
 
   if (typeof window !== 'undefined') {
     window.addEventListener('resize', handleResize)
+  }
+  function getBio() {
+    if (showVideo) {
+      return (
+        <div className="max-w-[40rem] sm:min-w-[40rem]">
+          {aboutMeVideo}
+        </div>
+      )
+    }
+    if (showMore) {
+      return (
+        <div className="relative flex flex-col items-center gap-5">
+          <div>{bio}</div>
+          <div className="absolute bottom-0 right-0 text-base cursor-pointer hover:underline"
+            onClick={() => setShowMore(false)}
+          >
+            Show Less
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="relative">
+          <div className="flex flex-col gap-4">
+            <div>{headerBio}</div>
+            <div>{firstPartBio}</div>
+          </div>
+          <div
+            className="absolute right-0 text-base cursor-pointer hover:underline"
+            onClick={() => setShowMore(true)}
+          >
+            Show More
+          </div>
+        </div>
+      )
+    }
+  }
+
+  function handleFormatChange(type: string) {
+    if (type === 'video') {
+      if (!showVideo) {
+        setShowVideo(true)
+      }
+    } else {
+      if (showVideo) {
+        setShowVideo(false)
+      }
+    }
   }
 
   function handleEmailClick() {
@@ -43,16 +95,24 @@ export default function AboutPage() {
       </video> 
   )
 
-  const humu = <a target='_blank' href="https://support.humu.com/hc/en-us" className="underline hover:text-gray-400">Humu</a>
+  const humuAnchor = <a target='_blank' href="https://support.humu.com/hc/en-us" className="underline hover:text-gray-400">Humu</a>
   const kismet = <a target='_blank' href="https://www.kismethealth.com/" className="underline hover:text-gray-400">Kismet Health</a>
-  
+  const humu = (
+    <>
+      <span>At {humuAnchor}</span>
+    </>
+  )
+  const header = "Efrem's Portfolio"
   const headerBio = "Hi, I'm Efrem"
+  const correctPadding = showVideo ? '' : 'p-10'
+  const correctSmallPadding = showVideo ? '' : 'p-5'
+  const correctBackgroundColor = showVideo ? 'bg-[#171717]' : ''
 
   const firstPartBio = (`I'm a software engineer based in San Francisco, California. 
     My coding journey began in 2018, and I’ve been honing my skills ever since. 
     I enjoy building robust and user-friendly applications and tackling 
     complex challenges head-on. Over the years, I've gained extensive experience 
-    in various aspects of software development. At `)
+    in various aspects of software development. `)
     
   const secondPartBio = (`, I worked on an HR/Productivity tool. In addition to 
     developing, I improved my skills writing Slab documents, unit tests & E2E tests, 
@@ -73,17 +133,27 @@ export default function AboutPage() {
     friends at Spikeball. Feel free to browse through my portfolio to see some of my work. 
     If you have any questions or would like to connect, don't hesitate to reach out!`)
 
-  const flexClass = smallWindow ? 'flex-row items-start' : 'flex-col items-center align-center'
+  const bio = (
+    <div className="flex flex-col gap-4 font-sans text-xl">
+      {headerBio}
+      <div>
+        {firstPartBio}{humu}{secondPartBio}{kismet}{thirdPartBio}
+      </div>
+      <div>{fourthPartBio}</div>
+    </div>
+  )
 
+  const emailCopyMessage = smallWindow ? "Email copied successfully" : "Success"
+  
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex justify-end items-center h-[3rem] xxs:justify-between">
-        <div className='text-3xl hidden xxs:block'>
-          About
+      <div className="flex justify-end items-center mb-2 h-[3rem] xxs:justify-between">
+        <div className='text-4xl select-none hidden xxs:block'>
+          {header}
         </div>
-        <div className="flex gap-4 items-center">
-          {alertVisible && <Alert icon={<CheckIcon fontSize="inherit" />} severity="success" onClose={() => setAlertVisible(false)}>
-            Email copied successfully.
+        <div className="flex gap-4 items-center relative">
+          {alertVisible && <Alert className="z-10" icon={<CheckIcon fontSize="inherit" />} severity="success" onClose={() => setAlertVisible(false)}>
+            {emailCopyMessage}
           </Alert>}
           <a target="_blank" href="https://www.linkedin.com/in/efrem-porter-550b0b224/">
             <LinkedInIcon fontSize="large" className="cursor-pointer text-gray-100 hover:text-gray-400"/>
@@ -96,16 +166,16 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <div className={`min-w-[21rem] flex gap-7 p-5 border-2 border-[#252525] rounded-sm ${flexClass} sm:p-10`}>
-        <div className="max-w-[40rem] sm:min-w-[40rem] ">
-          {aboutMeVideo}
-        </div>
-        <div className="flex flex-col gap-4 font-sans text-lg">
-          <div className="text-xl">{headerBio}</div>
-          <div>
-            {firstPartBio}{humu}{secondPartBio}{kismet}{thirdPartBio}
+      <div>
+      <div className="flex items-center justify-start gap-3 text-2xl pl-1 pb-2">
+        <div className={`cursor-pointer ${showVideo ? '' : 'underline'}`} onClick={() => handleFormatChange('text')}>Text</div>
+        <div>|</div>
+        <div className={`cursor-pointer ${showVideo ? 'underline' : ''}`} onClick={() => handleFormatChange('video')}>Video</div>
+      </div>
+        <div className={`min-w-[21rem] flex gap-7 ${correctSmallPadding} border-2 border-[#252525] rounded-sm flex-col items-center align-center ${correctBackgroundColor} sm:${correctPadding}`}>
+          <div className="flex flex-col gap-4 font-sans text-xl">
+            {getBio()}
           </div>
-          <div>{fourthPartBio}</div>
         </div>
       </div>
     </div>

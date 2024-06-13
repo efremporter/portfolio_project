@@ -52,10 +52,8 @@ export async function POST(request) {
         projectUrl,
         filePath,
       }
-      console.log('before create', data)
       const newProject = await prisma.project.create({ data })
       if (newProject) {
-        console.log('NEW project', newProject)
         return NextResponse.json({ success: true, newProject })
       } else {
         return NextResponse.json({ error: "Error creating post" })
