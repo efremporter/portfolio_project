@@ -42,8 +42,7 @@ export default function AboutPage(props: {
       )
     } else {
       return (
-        <div className="flex flex-col gap-4 font-sans text-xl text-gray-100">
-          <div>{headerBio}</div>
+        <div className="flex flex-col gap-4 font-sans text-xl text-black">
           <div>{firstPartBio}</div>
         </div>
       )
@@ -86,8 +85,8 @@ export default function AboutPage(props: {
       </video> 
   )
 
-  const humuAnchor = <a target='_blank' href="https://support.humu.com/hc/en-us" className="underline hover:text-gray-400">Humu</a>
-  const kismet = <a target='_blank' href="https://www.kismethealth.com/" className="underline hover:text-gray-400">Kismet Health</a>
+  const humuAnchor = <a target='_blank' href="https://support.humu.com/hc/en-us" className="underline hover:text-gray-500">Humu</a>
+  const kismet = <a target='_blank' href="https://www.kismethealth.com/" className="underline hover:text-gray-500">Kismet Health</a>
   const humu = (
     <>
       <span>At {humuAnchor}</span>
@@ -96,8 +95,7 @@ export default function AboutPage(props: {
   const header = "Efrem's Portfolio"
   const headerBio = "Hi, I'm Efrem"
   const correctPadding = showVideo ? '' : 'p-10'
-  const correctSmallPadding = showVideo ? '' : 'p-5'
-  const correctBackgroundColor = showVideo ? 'bg-[#171717]' : 'bg-[#171717]'
+  const correctBackgroundStyle = showVideo ? "" : "p-6 gap-4 bg-gray-300 rounded-xl"
 
   const firstPartBio = (`I'm a software engineer based in San Francisco, California. 
     My coding journey began in 2018, and I’ve been honing my skills ever since. 
@@ -119,18 +117,23 @@ export default function AboutPage(props: {
     component tests and end-to-end tests, and I have a particular affinity for 
     React, Redux, NextJS, TailwindCSS, TypeScript, JavaScript, PostgreSQL, and 
     AWS (S3 and CloudFront). My goal is always to create impactful and efficient 
-    solutions, whether I'm working on a team or leading a project. When I'm not 
+    solutions, whether I'm working on a team or leading a project. `)
+
+  const fifthPartBio = (`When I'm not 
     coding, you can find me either playing pool, enoying a family barbeque, or crushing my 
-    friends at Spikeball. Feel free to browse through my portfolio to see some of my work. 
+    friends at Spikeball. Feel free to browse through my portfolio to see some of my work and learn more about me. `)
+
+  const sixthPartBio = (`
     If you have any questions or would like to connect, don't hesitate to reach out!`)
 
   const bio = (
-    <div className="flex flex-col gap-4 font-sans text-xl text-gray-100">
-      {headerBio}
+    <div className="flex flex-col gap-4 font-sans text-xl text-black">
       <div>
         {firstPartBio}{humu}{secondPartBio}{kismet}{thirdPartBio}
       </div>
       <div>{fourthPartBio}</div>
+      <div>{fifthPartBio}</div>
+      <div>{sixthPartBio}</div>
     </div>
   )
 
@@ -139,7 +142,7 @@ export default function AboutPage(props: {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-end items-center mb-2 h-[3rem] xxs:justify-between">
-        <div className='text-3xl select-none hidden xxs:block'>
+        <div className='text-3xl select-none hidden xxs:block sm:text-4xl'>
           {header}
         </div>
         <div className="flex gap-4 items-center relative">
@@ -163,14 +166,17 @@ export default function AboutPage(props: {
           <div>|</div>
           <div className={`cursor-pointer ${showVideo ? 'underline' : ''}`} onClick={() => handleFormatChange('video')}>Video</div>
         </div>
-        <div className="flex flex-col border bg-[rgb(0,0,0)] border-[#c1bbb7] rounded-sm">
-          <div className={`min-w-[21rem] flex gap-7 bg-green-20 ${correctSmallPadding} flex-col items-center align-center bg-[#171717] sm:${correctPadding} sm:pb-2`}>
-            <div className="flex flex-col gap-4">
+        <div className="flex flex-col border border-[#c1bbb7] rounded-md bg-[#121211]">
+          <div className={`min-w-[21rem] gap-3 flex bg-green-20 ${correctPadding} flex-col items-center align-center sm:${correctPadding} sm:pb-2`}>
+            {!showVideo && <div className="self-start font-sans text-2xl text-gray-100">
+              {headerBio}
+            </div>}
+            <div className={`flex flex-col ${correctBackgroundStyle}`}>
               {getBio()}
             </div>
           </div>
           {!showVideo && <div onClick={handleShowMore}
-            className="self-end text-right w-full pb-2 pr-3 bg-[#171717] text-gray-100 text-base cursor-pointer hover:underline"
+            className="self-end text-right w-full pb-2 pr-3 text-gray-100 text-base cursor-pointer hover:underline"
           >
             Show {showMore ? 'Less' : 'More'}
           </div>}
