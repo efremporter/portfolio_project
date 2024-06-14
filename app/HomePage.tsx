@@ -7,7 +7,7 @@ import PostCarousel from './components/PostCarousel'
 export default function HomePage() {
   return (
     <div className='flex flex-col h-full gap-7 pt-2 min-w-[250px]'>
-      <AboutPage homePage={true}/>
+      <AboutPage/>
       <div className='flex flex-col gap-3'>
         <div className="flex justify-between items-center">
           <div className='text-3xl select-none'>
