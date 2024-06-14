@@ -6,9 +6,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import CheckIcon from '@mui/icons-material/Check';
 import Alert from '@mui/material/Alert';
 
-export default function AboutPage(props: {
-  homePage: boolean
-}) {
+export default function AboutPage() {
 
   useEffect(() => handleResize(), [])
 
@@ -167,7 +165,7 @@ export default function AboutPage(props: {
           <div className={`cursor-pointer ${showVideo ? 'underline' : ''}`} onClick={() => handleFormatChange('video')}>Video</div>
         </div>
         <div className="flex flex-col border border-[#c1bbb7] rounded-md bg-[#121211]">
-          <div className={`min-w-[21rem] gap-3 flex bg-green-20 ${correctPadding} flex-col items-center align-center sm:${correctPadding} sm:pb-2`}>
+          <div className={`min-w-[21rem] gap-3 flex bg-green-20 p-5 flex-col items-center align-center sm:${correctPadding} sm:pb-2`}>
             {!showVideo && <div className="self-start font-sans text-2xl text-gray-100">
               {headerBio}
             </div>}
