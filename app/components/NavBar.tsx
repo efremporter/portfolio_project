@@ -4,12 +4,8 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import HomeIcon from '@mui/icons-material/Home';
 import FolderCopyOutlinedIcon from '@mui/icons-material/FolderCopyOutlined';
 import FolderCopyIcon from '@mui/icons-material/FolderCopy';
-import VideoCameraBackOutlinedIcon from '@mui/icons-material/VideoCameraBackOutlined';
-import VideoCameraBackIcon from '@mui/icons-material/VideoCameraBack';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import ImageIcon from '@mui/icons-material/Image';
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
-import PersonIcon from '@mui/icons-material/Person';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
@@ -32,6 +28,12 @@ export default function NavBar() {
   function getSelectedBorder(currentPathname: string, pathname: string) {
     if (currentPathname.slice(1) === pathname) {
       return 'border-b border-gray-200'
+    } else {
+      // Handle videosPage/photosPage
+      if (currentPathname.slice(1) === pathname + '/photos' ||
+        currentPathname.slice(1) === pathname + '/videos') {
+        return 'border-b border-gray-200'
+      }
     }
     return ''
   }
@@ -52,22 +54,10 @@ export default function NavBar() {
           {showLabels && 'Projects'}
         </li>
       </Link>
-      <Link className='flex flex-1' href="/videos">
-        <li className={`${liClassName} ${getSelectedBorder(pathname, 'videos')} flex-1`}>
-          {pathname === '/videos' ? <VideoCameraBackIcon fontSize='large' /> : <VideoCameraBackOutlinedIcon fontSize='large' />}
-          {showLabels && 'Videos'}
-        </li>
-      </Link>
-      <Link className='flex flex-1' href="/photos">
-        <li className={`${liClassName} ${getSelectedBorder(pathname, 'photos')} flex-1`}>
-          {pathname === '/photos' ? <ImageIcon fontSize='large' /> : <ImageOutlinedIcon fontSize='large' />}
-          {showLabels && 'Photos'}
-        </li>
-      </Link>
-      <Link className='flex flex-1' href="/about">
-        <li className={`${liClassName} ${getSelectedBorder(pathname, 'about')} flex-1`}>
-          {pathname === '/about' ? <PersonIcon fontSize='large' /> : <PersonOutlinedIcon fontSize='large' />}
-          {showLabels && 'About'}
+      <Link className='flex flex-1' href="/media">
+        <li className={`${liClassName} ${getSelectedBorder(pathname, 'media')} flex-1`}>
+          {pathname.includes('/media') ? <ImageIcon fontSize='large' /> : <ImageOutlinedIcon fontSize='large' />}
+          {showLabels && 'Media'}
         </li>
       </Link>
     </ul>
