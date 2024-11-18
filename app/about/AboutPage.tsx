@@ -158,7 +158,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <div className="flex items-center justify-start gap-3 text-2xl pl-1 pb-2">
           <div className={`cursor-pointer ${showVideo ? '' : 'underline'}`} onClick={() => handleFormatChange('text')}>Text</div>
           <div>|</div>
@@ -179,7 +179,7 @@ export default function AboutPage() {
             Show {showMore ? 'Less' : 'More'}
           </div>}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
